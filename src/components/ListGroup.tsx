@@ -1,6 +1,8 @@
+import React from "react";
+
 function ListGroup() {
   let items = ["New York", "San Francisco", "Tokyo", "Shibuya"];
-  items = [];
+  // items = [];
 
   function getMessage() {
     return items.length === 0 && <p>No items found</p>;
@@ -12,9 +14,13 @@ function ListGroup() {
       <ul className="list-group">
         {getMessage()}
         {items.map((item) => (
-          <li key={item} className="list-group-item">
-            {item}
-          </li>
+          <React.Fragment key={item}>
+            {" "}
+            <li onClick={() => console.log(item)} className="list-group-item">
+              {item}
+            </li>
+            <p>Hello World</p>
+          </React.Fragment>
         ))}
       </ul>
     </>
